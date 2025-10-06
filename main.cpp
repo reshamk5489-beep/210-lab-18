@@ -14,9 +14,9 @@ int main()
     Node *head = nullptr;
     char yesOrNo;
 
-    cout << "Which linked list method should we use?";
-    cout << "[1] New nodes are added at the head of the linked list";
-    cout << "[2] New nodes are added at the tail of the linked list";
+    cout << "Which linked list method should we use?" << endl;
+    cout << "[1] New nodes are added at the head of the linked list" << endl;
+    cout << "[2] New nodes are added at the tail of the linked list" << endl;
     cout << "Choice: ";
 
     cin >> userChoice;
@@ -28,8 +28,10 @@ int main()
         cout << "Enter review rating 0-5: ";
         cin >> temp->rating;
 
+        cin.ignore();
+
         cout << "Enter review comments: ";
-        cin >> temp->comment;
+        getline(cin, temp->comment);
 
         if (head == nullptr)
         {
@@ -51,6 +53,7 @@ int main()
 
         cout << "Enter another review? Y/N: ";
         cin >> yesOrNo;
+        cin.ignore();
 
         if (yesOrNo == 'N' || yesOrNo == 'n')
         {
