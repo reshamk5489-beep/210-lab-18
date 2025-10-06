@@ -48,6 +48,13 @@ int main()
             else 
             {
                 // Add to the tail
+                Node *current = head;
+                while (current != nullptr)
+                {
+                    current = current->next;
+                }
+
+                current->next = temp;
             }
         }
 
@@ -64,12 +71,17 @@ int main()
     cout << "Outputting all reviews:" << endl;
 
     Node *current = head;
+    int reviewNum = 0;
+    double total = 0.0;
 
     while (current != nullptr)
     {
-        cout << "Rating: " << current->rating << ": Comment: " << current->comment << endl;
+        total += current->rating;
+        cout << "\t> Review #" << ++reviewNum << ": " << current->rating << ": " << current->comment << endl;
         current = current->next;
     }
+
+    cout << "\t> Average: " << total/reviewNum << endl;
 
     return 0;
 }
