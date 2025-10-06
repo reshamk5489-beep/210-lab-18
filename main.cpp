@@ -56,7 +56,7 @@ int main()
             {
                 // Comment #8: Add to the tail
                 Node *current = head;
-                while (current != nullptr)
+                while (current->next != nullptr)
                 {
                     current = current->next;
                 }
